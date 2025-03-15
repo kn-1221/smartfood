@@ -1,0 +1,14 @@
+<mapper namespace="com.exapmle.mybatis.mapper.UserMapepr">
+    <select id="findByEmail" resultType="com.example.beans.UserBean">
+        SELECT
+            u.id AS id,
+            u.username AS userName,
+            u.email AS email,
+            u.password AS password
+        FROM
+            users u
+        WHERE
+            u.email = #{email}
+    </select>
+
+</mapper>

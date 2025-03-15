@@ -2,28 +2,33 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>ログイン画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h2>ログイン</h2>
-
-    <!-- ログインフォーム -->
-    <form th:action="@{/login}" method="post">
-        <div>
-            <label>ユーザー名:</label>
-            <input type="text" name="username" required>
+    <div class="container">
+        <div class="form-container">
+            <h1>ログイン</h1>
+                <!-- エラーメッセージ（Spring Security のエラーパラメータを表示） -->
+            <p class="error-message" th:if="${param.error}">メールアドレスまたはパスワードが間違っています。</p>
+            <p class="logout-message" th:if="${param.logout}">ログアウトしました。</p>
+            <form id="login-form" th:action="@{/auth/login}" method="post">
+                <div class="input-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">パスワード</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">ログイン</button>
+                <div class="links">
+                    <a href="forgotPassword.html">パスワードをお忘れの場合</a>
+                    <a href="register.html">新規登録</a>
+                </div>
+            </form>
         </div>
-        <div>
-            <label>パスワード:</label>
-            <input type="password" name="password" required>
-        </div>
-        <div>
-            <button type="submit">ログイン</button>
-        </div>
-    </form>
-
-    <!-- エラーメッセージ表示 -->
-    <p style="color:red;" th:if="${error}" th:text="${error}"></p>
-
+    </div>
 </body>
 </html>
