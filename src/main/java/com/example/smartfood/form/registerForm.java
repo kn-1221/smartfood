@@ -3,7 +3,7 @@ package com.example.smartfood.form;
 import lombok.Data;
 
 @Data
-public class registerForm {
+public class RegisterForm {
     //ユーザ名
     private String userName;
     //メールアドレス

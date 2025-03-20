@@ -42,7 +42,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/login", "/css/**", "/js/**").permitAll() // ログインページと静的ファイルは許可
+            .requestMatchers("/login","/register","/registComplete", "/css/**", "/js/**").permitAll() // ログインページと静的ファイルは許可
                 .anyRequest().authenticated() // それ以外は認証必須
             )
             .formLogin(login -> login
