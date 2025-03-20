@@ -1,4 +1,4 @@
-package com.example.beans;
+package com.example.smartfood.beans;
 
 import lombok.Data;
 

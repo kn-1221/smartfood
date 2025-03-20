@@ -1,4 +1,4 @@
-package com.example.security;
+package com.example.smartfood.security;
 
 import java.util.Optional;
 
@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.beans.UserBean;
-import com.example.mapper.user.UserMapper;
+import com.example.smartfood.beans.UserBean;
+import com.example.smartfood.mapper.user.UserMapper;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

@@ -1,4 +1,4 @@
-package com.example.security;
+package com.example.smartfood.security;
 
 import java.util.List;
 
@@ -29,11 +29,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return userDetailsService;
-    }
-
 
     @Bean
     public AuthenticationManager authenticationManager() {
@@ -47,7 +42,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/login", "/auth/login", "/css/**", "/js/**").permitAll() // ログインページと静的ファイルは許可
+            .requestMatchers("/login", "/css/**", "/js/**").permitAll() // ログインページと静的ファイルは許可
                 .anyRequest().authenticated() // それ以外は認証必須
             )
             .formLogin(login -> login

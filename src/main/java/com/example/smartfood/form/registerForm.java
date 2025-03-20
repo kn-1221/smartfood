@@ -1,4 +1,4 @@
-package com.example.form;
+package com.example.smartfood.form;
 
 import lombok.Data;
 
