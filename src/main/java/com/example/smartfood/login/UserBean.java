@@ -1,4 +1,4 @@
-package com.example.smartfood.beans;
+package com.example.smartfood.login;
 
 import lombok.Data;
 
@@ -7,7 +7,7 @@ public class UserBean {
 
     private String id;
 
-    private String userName;
+    private String username;
 
     private String email;
 

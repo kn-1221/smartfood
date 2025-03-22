@@ -1,11 +1,11 @@
-package com.example.smartfood.form;
+package com.example.smartfood.register;
 
 import lombok.Data;
 
 @Data
 public class RegisterForm {
     //ユーザ名
-    private String userName;
+    private String username;
     //メールアドレス
     private String email;
     //パスワード

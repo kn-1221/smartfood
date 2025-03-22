@@ -35,6 +35,7 @@ mybatis:
     map-underscore-to-camel-case: true  # snake_case のカラム名を camelCase に自動変換
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # コンソールにSQLログを表示
   mapper-locations: classpath:/mybatis/mapper/**/*.xml 
+  
 
 logging:
   level:

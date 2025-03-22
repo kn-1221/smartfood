@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.smartfood.register.RegisterMapper">
+    <insert id="insertUser" parameterType="com.example.smartfood.register.RegisterForm">
+        INSERT INTO users (username,email,password)
+        VALUES (#{username},#{email},#{password}) 
+    </insert>
+
+    <select id="countMatchedUsername" resultType="int" parameterType="com.example.smartfood.register.RegisterForm">
+        SELECT
+            COUNT(*)
+        FROM   
+            users u
+        WHERE
+            u.username = #{username}
+    </select>
+
+</mapper>
