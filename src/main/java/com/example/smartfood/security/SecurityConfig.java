@@ -48,6 +48,8 @@ public class SecurityConfig {
             .formLogin(login -> login
                 .loginPage("/login") // カスタムログインページ
                 .loginProcessingUrl("/auth/login") // ログイン処理のURL
+                .usernameParameter("email") 
+                .passwordParameter("password")
                 .defaultSuccessUrl("/home", true) // 成功時のリダイレクト先
                 .failureUrl("/login?error=true") // 失敗時のリダイレクト先
                 .permitAll()

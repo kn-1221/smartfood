@@ -3,23 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホーム</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>スマート食事管理 - ホーム</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="menu">
+        <nav class="main-menu">
             <ul>
-                <li><a href="home.html" class="active">ホーム</a></li>
-                <li><a href="#">プロフィール</a></li>
-                <li><a href="#">設定</a></li>
-                <li><a href="login.html">ログアウト</a></li>
+                <li>
+                    <a href="#" class="active">
+                        <i class="fas fa-home"></i>
+                        <span>ホーム</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-utensils"></i>
+                        <span>食事記録</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>栄養管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-robot"></i>
+                        <span>AIアドバイス</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>食事計画</span>
+                    </a>
+                </li>
             </ul>
-        </div>
-        <div class="form-container">
+        </nav>
+
+        <div class="content-area">
             <div class="welcome">
-                <h1>ようこそ！</h1>
-                <p>ログインに成功しました。</p>
+                <h1>こんにちは、ユーザーさん</h1>
+                <p>今日も健康的な一日を過ごしましょう！</p>
+            </div>
+
+            <div class="dashboard">
+                <div class="dashboard-row">
+                    <div class="dashboard-card summary">
+                        <h2>今日の栄養バランス</h2>
+                        <div class="nutrition-summary">
+                            <div class="nutrition-item">
+                                <span class="label">カロリー</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                </div>
+                                <span class="value">1200 / 2000 kcal</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">タンパク質</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%;"></div>
+                                </div>
+                                <span class="value">30 / 65 g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">炭水化物</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%;"></div>
+                                </div>
+                                <span class="value">140 / 200 g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">脂質</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 50%;"></div>
+                                </div>
+                                <span class="value">30 / 60 g</span>
+                            </div>
+                        </div>
+                        <a href="#" class="link-button">詳細な栄養分析を見る <i class="fas fa-angle-right"></i></a>
+                    </div>
+
+                    <div class="dashboard-card ai-advice">
+                        <div class="card-header">
+                            <h2>今日のAIアドバイス</h2>
+                            <span class="badge">New</span>
+                        </div>
+                        <div class="advice-content">
+                            <p>朝食のタンパク質が不足傾向です。卵や豆腐、ヨーグルトなどを取り入れてみましょう。</p>
+                        </div>
+                        <div class="advice-actions">
+                            <a href="#" class="link-button">すべてのアドバイスを見る <i class="fas fa-angle-right"></i></a>
+                            <a href="#" class="link-button">食事提案を受ける <i class="fas fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-row">
+                    <div class="dashboard-card quick-add">
+                        <h2>食事を記録する</h2>
+                        <div class="quick-actions">
+                            <button class="action-button"><i class="fas fa-camera"></i><span>写真で記録</span></button>
+                            <button class="action-button"><i class="fas fa-pencil-alt"></i><span>手入力で記録</span></button>
+                            <button class="action-button"><i class="fas fa-barcode"></i><span>バーコードから追加</span></button>
+                            <button class="action-button"><i class="fas fa-history"></i><span>食事履歴を見る</span></button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card meal-plan">
+                        <h2>今日の食事計画</h2>
+                        <div class="meal-list">
+                            <div class="meal-item">
+                                <div class="meal-info">
+                                    <h3>朝食</h3>
+                                    <p>全粒粉トースト、ヨーグルト、リンゴ</p>
+                                </div>
+                                <div class="meal-actions">
+                                    <button class="icon-button"><i class="fas fa-check"></i></button>
+                                    <button class="icon-button"><i class="fas fa-edit"></i></button>
+                                </div>
+                            </div>
+                            <div class="meal-item">
+                                <div class="meal-info">
+                                    <h3>昼食</h3>
+                                    <p>サラダチキンボウル</p>
+                                </div>
+                                <div class="meal-actions">
+                                    <button class="icon-button"><i class="fas fa-check"></i></button>
+                                    <button class="icon-button"><i class="fas fa-edit"></i></button>
+                                </div>
+                            </div>
+                            <div class="meal-item">
+                                <div class="meal-info">
+                                    <h3>夕食</h3>
+                                    <p>未設定</p>
+                                </div>
+                                <div class="meal-actions">
+                                    <button class="btn-small">献立を作る</button>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="link-button">買い物リストを見る <i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

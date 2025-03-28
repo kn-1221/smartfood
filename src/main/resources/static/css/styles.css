@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 body {
     background-color: #f5f5f5;
@@ -11,12 +5,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
 }
 
 .form-container {
@@ -81,31 +69,397 @@ input {
     text-decoration: underline;
 }
 
-.menu {
-    background-color: #333;
+
+/* 元々のcssで修正/更新する部分 */
+.container {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    max-width: 1200px; /* PC向けに最大幅を拡大 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0; /* 余白を調整 */
+    display: flex; /* メニューとコンテンツエリアを横並びに */
+    align-items: center;
+    justify-content: center;
 }
 
-.menu ul {
-    display: flex;
-    justify-content: space-around;
+/* メニューの新しいスタイル */
+.main-menu {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80px; /* PCではコンパクトに */
+    transition: all 0.3s ease;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.main-menu ul {
     list-style-type: none;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.menu a {
-    color: white;
+.main-menu li {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.main-menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    font-size: 16px;
+    color: #333;
+    padding: 12px 0;
+    transition: all 0.3s;
 }
 
-.menu a:hover, .menu a.active {
+.main-menu a:hover, .main-menu a.active {
     color: #4CAF50;
 }
 
+.main-menu i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.main-menu span {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* コンテンツエリア */
+.content-area {
+    flex: 1;
+    padding: 20px;
+}
+
+/* 歓迎メッセージ */
 .welcome {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.welcome h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.welcome p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ダッシュボードレイアウト */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    min-width: 300px; /* カードの最小幅を設定 */
+}
+
+.dashboard-card h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    margin-bottom: 0;
+}
+
+/* 栄養サマリーのスタイル */
+.nutrition-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.nutrition-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nutrition-item .label {
+    width: 80px;
+    color: #666;
+}
+
+.nutrition-item .value {
+    width: 100px;
+    text-align: right;
+    color: #666;
+    font-size: 14px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+/* クイック追加のスタイル */
+.quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.action-button:hover {
+    background-color: #e9e9e9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-button i {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 8px;
+}
+
+.action-button span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* AIアドバイスセクションのスタイル */
+.badge {
+    background-color: #FF5722;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.advice-content {
+    background-color: #f0f8f0;
+    border-left: 4px solid #4CAF50;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 15px;
+}
+
+.advice-content p {
+    margin: 0;
+    color: #555;
+}
+
+.advice-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+/* 食事計画のスタイル */
+.meal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.meal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.meal-item:hover {
+    background-color: #f0f0f0;
+}
+
+.meal-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.meal-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.meal-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.icon-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #d0d0d0;
+}
+
+.icon-button i {
+    color: #555;
+    font-size: 14px;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-small:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* リンクボタンのスタイル */
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.link-button i {
+    margin-left: 5px;
+    transition: transform 0.2s;
+}
+
+.link-button:hover {
+    color: #45a049;
+}
+
+.link-button:hover i {
+    transform: translateX(3px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 992px) {
+    .dashboard-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .main-menu {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    
+    .main-menu ul {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+    
+    .main-menu li {
+        margin-bottom: 0;
+    }
+    
+    .welcome {
+        padding: 15px 0;
+    }
+    
+    .welcome h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-area {
+        padding: 10px;
+    }
+    
+    .dashboard-card {
+        padding: 15px;
+    }
+    
+    .main-menu i {
+        font-size: 20px;
+    }
+    
+    .main-menu span {
+        font-size: 10px;
+    }
+    
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .advice-actions {
+        flex-direction: column;
+    }
 }
